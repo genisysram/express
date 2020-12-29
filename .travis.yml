@@ -24,12 +24,11 @@ matrix:
     - node_js: "13"
       env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
       arch: ppc64le
-  allow_failures:
-    # Allow the nightly installs to fail
-    - env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
+ 
    # allowing failure of versions which were not supported in ppc64le 
+  jobs: 
   exclude:
-  - node_js: "0.10"
+    - node_js: "0.10"
       arch: ppc64le
     - node_js: "0.12"
       arch: ppc64le
@@ -39,6 +38,9 @@ matrix:
       arch: ppc64le
     - node_js: "3.3"
       arch: ppc64le 
+  allow_failures:
+    # Allow the nightly installs to fail
+    - env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"     
 cache:
   directories:
     - node_modules
