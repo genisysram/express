@@ -26,7 +26,6 @@ matrix:
       arch: ppc64le
  
    # allowing failure of versions which were not supported in ppc64le 
-  jobs: 
   exclude:
     - node_js: "0.10"
       arch: ppc64le
